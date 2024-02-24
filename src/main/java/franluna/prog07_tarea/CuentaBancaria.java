@@ -3,11 +3,12 @@ package franluna.prog07_tarea;
 /**
  * Aquí generamos una clase que usaremos de Parent donde
  * tendremos los datos comunes a todos los tipos de cuentas.
+ * Implementamos el uso de la interfaz "Imprimible"
+ * Esta clase será del tipo abstract, ya que no la vamos a crear, tan solo vamos a hacer uso de ella.
  * @author Francisco Luna Raya
  */
 public abstract class CuentaBancaria implements Imprimible {
     
-
     private String iban;
     private double saldoActual;
     private Persona titular;
@@ -21,7 +22,7 @@ public abstract class CuentaBancaria implements Imprimible {
     }
     
     /**
-     * Creamos nuestro constructor del objeto CuentaBancaria
+     * Creamos nuestro constructor del objeto CuentaBancaria, haciendo uso de los siguientes parámetros
      * @param iban
      * @param saldoActual
      * @param titular
@@ -35,14 +36,14 @@ public abstract class CuentaBancaria implements Imprimible {
     /**
      * @return String return the iban
      */
-    public String getiban() {
+    public String getIban() {
         return iban;
     }
 
     /**
      * @param iban the iban to set
      */
-    public void setiban(String iban) {
+    public void setIban(String iban) {
         this.iban = iban;
     }
 
@@ -74,8 +75,11 @@ public abstract class CuentaBancaria implements Imprimible {
         this.titular = titular;
     }
 
+    /**
+     * Hacemos uso del override de la función de la interfaz, para poder devolver los datos de las cuentas, siendo estos, el IBAN, el saldo y el titular de la cuenta
+     */
     @Override
     public String devolverInfoString(){
-        return "Datos Cuenta {" + " iban = " + iban + " | Saldo Actual = " + saldoActual + " | Titular = " + titular.devolverInfoString() + " }";
+        return "Datos Cuenta {" + " IBAN = " + getIban() + " | Saldo Actual = " + getSaldoActual() + " | Titular = " + titular.devolverInfoString() + "}";
     }
 }

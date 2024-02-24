@@ -1,7 +1,7 @@
 package franluna.prog07_tarea;
 
 /**
- *
+ * Aquí tenemos un tipo de cuenta corriente, en este caso para empresa, siendo hija de la clase "CuentaCorriente"
  * @author Francisco Luna Raya
  */
 public class CuentaCorrienteEmpresa extends CuentaCorriente{
@@ -10,6 +10,16 @@ public class CuentaCorrienteEmpresa extends CuentaCorriente{
     private double tipoInteresDescubierto;
     private double comisionFijaDescubierto;
 
+    /**
+     * Creamos el constructor para la cuenta corriente de empresa haciendo uso de los siguientes parámetros.
+     * @param maximoDescubierto
+     * @param tipoInteresDescubierto
+     * @param comisionFijaDescubierto
+     * @param listaEntidades
+     * @param iban
+     * @param saldoActual
+     * @param titular
+     */
     public CuentaCorrienteEmpresa(double maximoDescubierto, double tipoInteresDescubierto, double comisionFijaDescubierto, String listaEntidades, String iban, double saldoActual, Persona titular) {
         super(listaEntidades, iban, saldoActual, titular);
         this.maximoDescubierto = maximoDescubierto;
@@ -59,8 +69,11 @@ public class CuentaCorrienteEmpresa extends CuentaCorriente{
         this.comisionFijaDescubierto = comisionFijaDescubierto;
     }
 
+    /**
+     * Hacemos uso del override de la función de la interfaz, para poder devolver nuestro mensaje
+     */
     @Override
     public String devolverInfoString(){
-        return super.devolverInfoString() + ", Máximo Descubierto =" + maximoDescubierto + ", Tipo de Interés Descubierto =" + tipoInteresDescubierto + ", Comisión Fija Descubierto =" + comisionFijaDescubierto	;
+        return super.devolverInfoString() + ", Máximo Descubierto = " + getMaximoDescubierto() + ", Tipo de Interés Descubierto = " + getTipoInteresDescubierto() + ", Comisión Fija Descubierto = " + getComisionFijaDescubierto();
     }
 }

@@ -1,7 +1,8 @@
 package franluna.prog07_tarea;
 
 /**
- *
+ * Esta va a ser la clase para definir a las personas y almacenar datos,
+ * tales como el nombre, apellidos y DNI. Para luego usar este constructor para crear al titular de la cuenta.
  * @author Francisco Luna Raya
  */
 public class Persona implements Imprimible{
@@ -20,7 +21,7 @@ public class Persona implements Imprimible{
     }
 
     /**
-     * Creamos el constructor del objeto Persona
+     * Creamos el constructor del objeto Persona, haciendo uso de los siguientes parámetros
      * @param nombre
      * @param apellidos
      * @param dni
@@ -78,6 +79,6 @@ public class Persona implements Imprimible{
      */
     @Override
     public String devolverInfoString(){
-        return ("Titular Cuenta {Nombre: " + getNombre() + " | Apellidos: " + getApellidos() + " | DNI: " + getDni() + " }");
+        return ("{Nombre: " + getNombre() + " | Apellidos: " + getApellidos() + " | DNI: " + getDni() + "}");
     }
 }
